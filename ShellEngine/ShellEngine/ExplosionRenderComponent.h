@@ -15,7 +15,7 @@ public:
 	//Overrides the default render method provided in the render component
 	//gameObject -> The game object to be rendered
 	//frameTime => time between the last 2 frames. 
-	void Render(std::shared_ptr<GameObject> gameObject, float frameTime) override;
+	void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override;
 
 	//Loads multiple images into memory
 	//PLEASE NOTE: THIS DOES NOT OVER_RIDES THE LOAD IMAGE METHOD IN RENDER COMPONENT

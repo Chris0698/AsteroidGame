@@ -1,7 +1,7 @@
 //function to create bullets
 //w16005124
 
-#include "BulletRenderComponent.h"
+#include "RenderComponent.h"
 #include "BulletCollisionComponent.h"
 #include "BulletPhysicsComponent.h"
 #include "GameObject.h"
@@ -13,7 +13,8 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &
 	const float SCALE = 6.0f;	//scale of the bullets
 
 	//components
-	std::shared_ptr<BulletRenderComponent> bulletRenderComponent (new BulletRenderComponent());
+	//std::shared_ptr<BulletRenderComponent> bulletRenderComponent (new BulletRenderComponent());
+	std::shared_ptr<RenderComponent> renderComponent(new RenderComponent());
 	std::shared_ptr<BulletCollisionComponent> bulletCollisionComponent (new BulletCollisionComponent(std::shared_ptr<Circle2D> (new Circle2D())));
 	std::shared_ptr<BulletPhysicsComponent> bulletPhysicsComponent (new BulletPhysicsComponent());
 
@@ -22,7 +23,7 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &
 		new GameObject
 		(
 			//passing the created components
-			bulletRenderComponent, 
+			renderComponent, 
 			bulletPhysicsComponent, 
 			bulletCollisionComponent, 
 			nullptr,
@@ -31,7 +32,7 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &
 	);
 
 	//Bullet image
-	bulletRenderComponent->LoadImage(gameObject, L"bullet.bmp");
+	renderComponent->LoadImage(gameObject, L"bullet.bmp");
 
 	//Setting the attribute for the bullet game object
 	gameObject->SetActive(true);

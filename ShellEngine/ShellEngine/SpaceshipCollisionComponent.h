@@ -15,7 +15,7 @@ public:
 
 	//Places the collision shape
 	//gameObject -> The shape it belongs to.
-	void PlaceHitboxShape(std::shared_ptr<GameObject> gameObject) override;
+	void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override;
 
 	//Process a collision between the spaceship and another game object
 	//gameObject -> The spaceship this component belong to

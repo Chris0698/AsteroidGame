@@ -9,12 +9,12 @@ ExplosionRenderComponent::ExplosionRenderComponent()
 	ExplosionRenderComponent::currentImageNunber = 0.0f;
 }
 
-void ExplosionRenderComponent::Render(std::shared_ptr<GameObject> gameObject, float frameTime)
+void ExplosionRenderComponent::Update(std::shared_ptr<GameObject> gameObject, float frameTime)
 {
 	//I cant think of a decent name. Just read the code, higher the number quicker the animation
-	const float ANIMATION_SPEED_RATE = 15.0f;	
+	const float ANIMATION_SPEED_RATE = 15.0f;
 
-	ExplosionRenderComponent::currentImageNunber = 
+	ExplosionRenderComponent::currentImageNunber =
 		ExplosionRenderComponent::currentImageNunber + ANIMATION_SPEED_RATE * frameTime;
 
 	if (ExplosionRenderComponent::currentImageNunber >= ExplosionRenderComponent::NUMBER_OF_EXPLOSION_IMAGES)

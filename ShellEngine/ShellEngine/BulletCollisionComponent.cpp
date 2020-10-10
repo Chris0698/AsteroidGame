@@ -10,7 +10,7 @@ BulletCollisionComponent::BulletCollisionComponent(std::shared_ptr<Circle2D> col
 	CollisionComponent::isCollidable = true;
 }
 
-void BulletCollisionComponent::PlaceHitboxShape(std::shared_ptr<GameObject> gameObject)
+void BulletCollisionComponent::Update(std::shared_ptr<GameObject> gameObject, float frameTime)
 {
 	if (gameObject->IsActive())
 	{

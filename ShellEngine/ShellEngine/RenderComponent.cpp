@@ -8,11 +8,29 @@ RenderComponent::RenderComponent()
 {
 }
 
+/*
 void RenderComponent::Render(std::shared_ptr<GameObject> gameObject, float frameTime)
 {
 	if (gameObject->IsActive())
 	{
 		MyDrawEngine *pMyDrawEngine = MyDrawEngine::GetInstance();
+		pMyDrawEngine->DrawAt
+		(
+			gameObject->GetPosition(),
+			gameObject->GetImage(),
+			gameObject->GetScale(),
+			gameObject->GetAngle(),
+			gameObject->GetTransparency()
+		);
+	}
+}
+*/
+
+void RenderComponent::Update(std::shared_ptr<GameObject> gameObject, float frameTime)
+{
+	if (gameObject->IsActive())
+	{
+		MyDrawEngine* pMyDrawEngine = MyDrawEngine::GetInstance();
 		pMyDrawEngine->DrawAt
 		(
 			gameObject->GetPosition(),

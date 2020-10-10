@@ -1,0 +1,8 @@
+Before changes
+596kb - debug
+109kb - release
+
+*Recreated the colision component system to make better use of inheritance and polymorpishm
+Notes:
+*Check the ObjectManager class CheckAllCollisions() to make sure the code built to deal with the collision
+*Thread the render and update components if possible.

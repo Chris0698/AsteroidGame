@@ -14,7 +14,7 @@ public:
 
 	//Places the collision shape on the game object
 	//gameObject -> Game object the collision shape will be applied to
-	void PlaceHitboxShape(std::shared_ptr<GameObject> gameObject) override;
+	void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override;
 
 	//Process a collision between this game object and another one
 	//gameObject -> the game object that has the collision

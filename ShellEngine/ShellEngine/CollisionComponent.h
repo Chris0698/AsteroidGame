@@ -5,13 +5,15 @@
 #include <memory>
 #include "Shapes.h"
 #include "mysoundengine.h"
+#include "Component.h"
+
 
 //forward declerations 
 class GameObject;
 class ObjectManager;
 
 //Abstract class for handling any collision
-class CollisionComponent
+class CollisionComponent : public Component
 {
 public:
 	//Constructor that doesn't really do much, there for completion i guess
@@ -19,7 +21,7 @@ public:
 
 	//PLace a hitbox shape
 	//gameObject -> gameObject that has collision
-	virtual void PlaceHitboxShape(std::shared_ptr<GameObject> gameObject) = 0;
+	virtual void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override {}
 
 	//Process a collision
 	//gameObject -> gam object that caused the collision

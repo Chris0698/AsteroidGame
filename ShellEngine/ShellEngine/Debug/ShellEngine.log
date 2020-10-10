@@ -1,1 +1,49 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(390,5): error MSB8020: The build tools for Visual Studio 2015 (Platform Toolset = 'v140') cannot be found. To build using the v140 build tools, please install Visual Studio 2015 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  wincode.cpp
+  vector2D.cpp
+  SpaceshipRenderComponent.cpp
+  SpaceshipPhysicsComponent.cpp
+  SpaceshipInputComponent.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(18): warning C4305: 'initializing': truncation from 'double' to 'float'
+  SpaceshipCollisionComponent.cpp
+  Spaceship.cpp
+  Shapes.cpp
+  RockPhysicsComponent.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\rockphysicscomponent.cpp(11): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  RockCollisionComponent.cpp
+  Rock.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(82): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(83): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  RenderComponent.cpp
+  PhysicsComponent.cpp
+  ObjectManager.cpp
+  mysoundengine.cpp
+  myinputs.cpp
+  mydrawengine.cpp
+  Level.cpp
+  InputComponent.cpp
+  HealthComponent.cpp
+  Generating Code...
+  Compiling...
+  gametimer.cpp
+  GameObjectTypes.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(82): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(83): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameObject.cpp
+  gamecode.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\gamecode.cpp(302): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\gamecode.cpp(338): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ExplosionRenderComponent.cpp
+  Explosion.cpp
+  ErrorLogger.cpp
+  CollisionComponent.cpp
+  camera.cpp
+  BulletPhysicsComponent.cpp
+  BulletCollisionComponent.cpp
+  Bullet.cpp
+  Generating Code...
+  ShellEngine.vcxproj -> C:\Users\chris\AsteroidGame\ShellEngine\Debug\ShellEngine.exe
+  ShellEngine.vcxproj -> C:\Users\chris\AsteroidGame\ShellEngine\Debug\ShellEngine.pdb (Full PDB)

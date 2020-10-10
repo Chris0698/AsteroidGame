@@ -99,9 +99,6 @@
     <ClCompile Include="BulletPhysicsComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RockRenderComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -164,12 +161,6 @@
     <ClInclude Include="SpaceshipRenderComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RockRenderComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BulletRenderComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ExplosionRenderComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -204,6 +195,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HealthComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

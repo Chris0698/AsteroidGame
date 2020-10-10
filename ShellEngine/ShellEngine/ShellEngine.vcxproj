@@ -23,7 +23,7 @@
     <ProjectGuid>{79156724-16A4-41E4-A93C-1B49E8B1C087}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ShellEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -35,20 +35,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -167,7 +167,6 @@
     <ClCompile Include="Rock.cpp" />
     <ClCompile Include="RockCollisionComponent.cpp" />
     <ClCompile Include="RockPhysicsComponent.cpp" />
-    <ClCompile Include="RockRenderComponent.cpp" />
     <ClCompile Include="Shapes.cpp" />
     <ClCompile Include="Spaceship.cpp" />
     <ClCompile Include="SpaceshipCollisionComponent.cpp" />
@@ -180,9 +179,9 @@
   <ItemGroup>
     <ClInclude Include="BulletCollisionComponent.h" />
     <ClInclude Include="BulletPhysicsComponent.h" />
-    <ClInclude Include="BulletRenderComponent.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="CollisionComponent.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="ErrorLogger.h" />
     <ClInclude Include="errortype.h" />
     <ClInclude Include="ExplosionRenderComponent.h" />
@@ -201,7 +200,6 @@
     <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="RockCollisionComponent.h" />
     <ClInclude Include="RockPhysicsComponent.h" />
-    <ClInclude Include="RockRenderComponent.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="SpaceshipCollisionComponent.h" />
     <ClInclude Include="SpaceshipInputComponent.h" />

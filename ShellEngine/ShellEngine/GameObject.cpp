@@ -24,7 +24,7 @@ void GameObject::Update(float frameTime)
 {
 	if (GameObject::renderComponent != nullptr)
 	{
-		GameObject::renderComponent->Render(GetPointer(), frameTime);
+		renderComponent->Update(GetPointer(), frameTime);
 	}
 
 	if (GameObject::physicsComponent != nullptr)
@@ -39,7 +39,7 @@ void GameObject::Update(float frameTime)
 
 	if (GameObject::collisionComponent != nullptr)
 	{
-		GameObject::collisionComponent->PlaceHitboxShape(GetPointer());
+		collisionComponent->Update(GetPointer(), frameTime);
 	}
 
 	if (GameObject::healthComponent != nullptr)

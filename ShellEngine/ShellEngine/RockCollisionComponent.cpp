@@ -12,7 +12,7 @@ RockCollisionComponent::RockCollisionComponent(std::shared_ptr<ObjectManager> ob
 	CollisionComponent::isCollidable = true;
 }
 
-void RockCollisionComponent::PlaceHitboxShape(std::shared_ptr<GameObject> gameObject)
+void RockCollisionComponent::Update(std::shared_ptr<GameObject> gameObject, float frameTime)
 {
 	if (gameObject->IsActive())
 	{

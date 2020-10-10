@@ -12,7 +12,7 @@ SpaceshipCollisionComponent::SpaceshipCollisionComponent( std::shared_ptr<Object
 	CollisionComponent::isCollidable = true;
 }
 
-void SpaceshipCollisionComponent::PlaceHitboxShape (std::shared_ptr<GameObject> gameObject)
+void SpaceshipCollisionComponent::Update(std::shared_ptr<GameObject> gameObject, float frameTime)
 {
 	if (gameObject->IsActive())
 	{

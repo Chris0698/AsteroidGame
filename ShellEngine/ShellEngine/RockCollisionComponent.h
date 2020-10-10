@@ -19,7 +19,7 @@ public:
 
 	//Places a hit box shape
 	//gameObject -> rock the collision component belongs to.
-	void PlaceHitboxShape(std::shared_ptr<GameObject> gameObject) override;
+	void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override;
 
 	//Process the collision between the rock and other game object
 	//gameObject -> rock the collision component belongs to.
