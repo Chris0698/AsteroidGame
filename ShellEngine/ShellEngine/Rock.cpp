@@ -25,18 +25,13 @@ inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager> &ob
 		)
 	);
 
-	//Create the new game object here
-	std::shared_ptr<GameObject> gameObject
-	(
-		new GameObject
-		(	
-			renderComponent,
-			rockPhysicsComponent,
-			rockCollisionComponent,
-			nullptr,
-			healthComponent
-		)
-	);
+	std::vector<std::shared_ptr<Component>> components;
+	components.push_back(renderComponent);
+	components.push_back(rockPhysicsComponent);
+	components.push_back(healthComponent);
+	components.push_back(rockCollisionComponent);
+
+	std::shared_ptr<GameObject> gameObject (new GameObject(components));
 
 	int pictureNumber = rand() % 4;
 	wchar_t* name = L"";
@@ -96,6 +91,8 @@ inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager> &ob
 	gameObject->SetTransparency(0);
 	gameObject->SetGameObjectType(GameObjectType::ROCK);
 
-	//return the new game object
+	gameObject->SetCollisionComponent(rockCollisionComponent);
+	gameObject->SetHealthComponent(healthComponent);
+
 	return gameObject;
 }

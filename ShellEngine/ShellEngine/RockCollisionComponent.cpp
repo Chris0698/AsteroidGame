@@ -21,8 +21,7 @@ void RockCollisionComponent::Update(std::shared_ptr<GameObject> gameObject, floa
 	}
 }
 
-void RockCollisionComponent::ProcessCollision (
-	std::shared_ptr<GameObject> gameObject, std::shared_ptr<GameObject> gameObjectCollided)
+void RockCollisionComponent::ProcessCollision (std::shared_ptr<GameObject> gameObject, std::shared_ptr<GameObject> gameObjectCollided)
 {
 	//If a rock hits anything that not another rock
 	if (gameObjectCollided->GetGameObjectType() != GameObjectType::ROCK)

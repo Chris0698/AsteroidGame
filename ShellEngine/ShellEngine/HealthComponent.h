@@ -4,6 +4,7 @@
 #pragma once
 #include <memory>
 #include "mysoundengine.h"
+#include "Component.h"
 
 //forward class dec to stop circle dependacy
 class GameObject;
@@ -11,7 +12,7 @@ class ObjectManager;
 
 //Health for each object that contains the component
 //Should probably have a health UI to go with this component
-class HealthComponent
+class HealthComponent : public Component
 {
 public:
 	//Constructor
@@ -30,7 +31,7 @@ public:
 
 	//Check if the game object still alive
 	//gameObject -> game object to be checked
-	void CheckIfStillAlive(std::shared_ptr<GameObject> gameObject);
+	void Update(std::shared_ptr<GameObject> gameObject, float frameTime) override;
 
 	//Death for the game object
 	//gameobject -> Game object that dead

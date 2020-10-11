@@ -1,7 +1,7 @@
 //global function containing the create ship method
 //w16005124
 
-#include "SpaceshipRenderComponent.h"
+#include "RenderComponent.h"
 #include "SpaceshipInputComponent.h"
 #include "SpaceshipPhysicsComponent.h"
 #include "SpaceshipCollisionComponent.h"
@@ -15,7 +15,7 @@ inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager> &ob
 	const float SCALE = 1.25f;
 	int startingHealth = 1;
 
-	std::shared_ptr<SpaceshipRenderComponent> shipRenderComponent (new SpaceshipRenderComponent());
+	std::shared_ptr<RenderComponent> shipRenderComponent (new RenderComponent());
 	std::shared_ptr<SpaceshipInputComponent> shipInputComponent (new SpaceshipInputComponent(objectManager));
 	std::shared_ptr<SpaceshipPhysicsComponent> shipPhysicsComponent (new SpaceshipPhysicsComponent());
 	std::shared_ptr<HealthComponent> healthComponent(new HealthComponent(objectManager, startingHealth));
@@ -28,18 +28,16 @@ inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager> &ob
 		)
 	);
 
-	//Create the new game object
-	std::shared_ptr<GameObject> gameObject
-	(
-		new GameObject
-		(
-			shipRenderComponent, 
-			shipPhysicsComponent, 
-			shipCollisionComponent, 
-			shipInputComponent,
-			healthComponent
-		)
-	);
+	std::vector<std::shared_ptr<Component>> components;
+	components.push_back(shipRenderComponent);
+	components.push_back(shipInputComponent);
+	components.push_back(shipPhysicsComponent);
+	components.push_back(healthComponent);
+	components.push_back(shipCollisionComponent);
+
+	std::shared_ptr<GameObject> gameObject(new GameObject(components));
+	gameObject->SetCollisionComponent(shipCollisionComponent);
+	gameObject->SetHealthComponent(healthComponent);
 
 	//Load and spaceship image and apply it to this game object
 	shipRenderComponent->LoadImage(gameObject, L"spaceship.bmp");

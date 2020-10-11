@@ -3,48 +3,19 @@
 
 #include "GameObject.h"
 
-//constructor
-GameObject::GameObject(
-	std::shared_ptr<RenderComponent> renderComponent,
-	std::shared_ptr<PhysicsComponent> physicsComponent,
-	std::shared_ptr<CollisionComponent> collisionComponent,
-	std::shared_ptr<InputComponent> inputComponent,
-	std::shared_ptr<HealthComponent> healthComponent
-) : 
-	renderComponent(renderComponent), 
-	physicsComponent(physicsComponent),
-	collisionComponent(collisionComponent), 
-	inputComponent(inputComponent),
-	healthComponent(healthComponent)
+GameObject::GameObject(std::vector<std::shared_ptr<Component>> components) : components(components)
 {
-	//empty constructor
 }
 
 void GameObject::Update(float frameTime)
 {
-	if (GameObject::renderComponent != nullptr)
+	if (components.size() > 0)
 	{
-		renderComponent->Update(GetPointer(), frameTime);
-	}
-
-	if (GameObject::physicsComponent != nullptr)
-	{
-		GameObject::physicsComponent->Update(GetPointer(), frameTime);
-	}
-	
-	if (GameObject::inputComponent != nullptr)
-	{
-		GameObject::inputComponent->Update(GetPointer(), frameTime);
-	}
-
-	if (GameObject::collisionComponent != nullptr)
-	{
-		collisionComponent->Update(GetPointer(), frameTime);
-	}
-
-	if (GameObject::healthComponent != nullptr)
-	{
-		GameObject::healthComponent->CheckIfStillAlive(GetPointer());
+		auto pointer = GetPointer();
+		for (auto component : components)
+		{
+			component->Update(pointer, frameTime);
+		}
 	}
 }
 
@@ -176,52 +147,9 @@ std::shared_ptr<CollisionComponent> GameObject::GetCollisionComponent()
 	}
 }
 
-std::shared_ptr<PhysicsComponent> GameObject::GetPhysicsComponent()
-{
-	if (GameObject::physicsComponent != nullptr)
-	{
-		return GameObject::physicsComponent;
-	}
-	else
-	{
-		return nullptr;
-	}
-}
-
-std::shared_ptr<RenderComponent> GameObject::GetRenderComponent()
-{
-	if (GameObject::renderComponent != nullptr)
-	{
-		return GameObject::renderComponent;
-	}
-	else
-	{
-		return nullptr;
-	}
-}
-
-std::shared_ptr<InputComponent> GameObject::GetInputComponent()
-{
-	if (GameObject::inputComponent != nullptr)
-	{
-		return GameObject::inputComponent;
-	}
-	else
-	{
-		return nullptr;
-	}
-}
-
 std::shared_ptr<HealthComponent> GameObject::GetHealthComponent()
 {
-	if (GameObject::healthComponent != nullptr)
-	{
-		return GameObject::healthComponent;
-	}
-	else
-	{
-		return nullptr;
-	}
+	return healthComponent;
 }
 
 std::shared_ptr<GameObject> GameObject::GetPointer()

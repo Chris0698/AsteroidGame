@@ -27,6 +27,7 @@ public:
 	//collisionComponent -> collision component for the new game object
 	//inputComponent -> Input component for the new game object
 	//healthComponent -> Health for the game object
+	/*
 	GameObject
 	(
 		std::shared_ptr<RenderComponent> renderComponent, 
@@ -35,6 +36,9 @@ public:
 		std::shared_ptr<InputComponent> inputComponent,
 		std::shared_ptr<HealthComponent> healthComponent
 	);
+	*/
+
+	GameObject(std::vector<std::shared_ptr<Component>> components);
 
 	//Update runs once per frame for physics such as movement.
 	//frameTime -> time between frames. 
@@ -110,13 +114,13 @@ public:
 	std::shared_ptr<CollisionComponent> GetCollisionComponent();
 
 	//Get the physics Component
-	std::shared_ptr<PhysicsComponent> GetPhysicsComponent();
+	//std::shared_ptr<PhysicsComponent> GetPhysicsComponent();
 
 	//Get the render component
-	std::shared_ptr<RenderComponent> GetRenderComponent();
+	//std::shared_ptr<RenderComponent> GetRenderComponent();
 
 	//get the input component
-	std::shared_ptr<InputComponent> GetInputComponent();
+	//std::shared_ptr<InputComponent> GetInputComponent();
 
 	//get health component
 	std::shared_ptr<HealthComponent> GetHealthComponent();
@@ -124,13 +128,25 @@ public:
 	//Get a reference to the current game object
 	std::shared_ptr<GameObject> GetPointer();
 
+	void SetCollisionComponent(std::shared_ptr<CollisionComponent> cc)
+	{
+		collisionComponent = cc;
+	}
+
+	void SetHealthComponent(std::shared_ptr<HealthComponent> hc)
+	{
+		healthComponent = hc;
+	}
+
 private:
 	//Component
-	std::shared_ptr<RenderComponent> renderComponent;
-	std::shared_ptr<PhysicsComponent> physicsComponent;
+	//std::shared_ptr<RenderComponent> renderComponent;
+	//std::shared_ptr<PhysicsComponent> physicsComponent;
 	std::shared_ptr<CollisionComponent> collisionComponent;
-	std::shared_ptr<InputComponent> inputComponent;
+	//std::shared_ptr<InputComponent> inputComponent;
 	std::shared_ptr<HealthComponent> healthComponent;
+
+	std::vector<std::shared_ptr<Component>> components;
 
 	//General attributes for all game objects
 	Vector2D position;

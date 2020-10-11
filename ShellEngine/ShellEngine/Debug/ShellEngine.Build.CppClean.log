@@ -1,5 +1,6 @@
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\vc140.pdb
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\vc140.idb
+c:\users\chris\asteroidgame\shellengine\shellengine\debug\gametimer.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\healthcomponent.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\inputcomponent.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\level.obj
@@ -17,7 +18,6 @@ c:\users\chris\asteroidgame\shellengine\shellengine\debug\spaceship.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\spaceshipcollisioncomponent.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\spaceshipinputcomponent.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\spaceshipphysicscomponent.obj
-c:\users\chris\asteroidgame\shellengine\shellengine\debug\spaceshiprendercomponent.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\vector2d.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\wincode.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\bullet.obj
@@ -31,7 +31,6 @@ c:\users\chris\asteroidgame\shellengine\shellengine\debug\explosionrendercompone
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\gamecode.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\gameobject.obj
 c:\users\chris\asteroidgame\shellengine\shellengine\debug\gameobjecttypes.obj
-c:\users\chris\asteroidgame\shellengine\shellengine\debug\gametimer.obj
 c:\users\chris\asteroidgame\shellengine\debug\shellengine.ilk
 c:\users\chris\asteroidgame\shellengine\debug\shellengine.exe
 c:\users\chris\asteroidgame\shellengine\debug\shellengine.pdb

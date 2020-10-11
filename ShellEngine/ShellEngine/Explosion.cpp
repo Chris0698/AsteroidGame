@@ -11,17 +11,11 @@ inline std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<ObjectManager
 	std::shared_ptr<ExplosionRenderComponent> explosionRenderComponent(new ExplosionRenderComponent());
 	explosionRenderComponent->LoadImages();		//load the explosion images into memory
 
-	std::shared_ptr<GameObject> gameObject 
-	(
-		new GameObject
-		(
-			explosionRenderComponent, 
-			nullptr, 
-			nullptr, 
-			nullptr,
-			nullptr
-		)
-	);
+	std::vector<std::shared_ptr<Component>> components;
+	components.push_back(explosionRenderComponent);
+
+
+	std::shared_ptr<GameObject> gameObject(new GameObject(components));
 
 	//angle and starting position would be set by the class that create the explosion e.g rock collision class
 	gameObject->SetActive(true);

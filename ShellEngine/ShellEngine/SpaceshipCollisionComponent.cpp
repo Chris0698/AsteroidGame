@@ -21,8 +21,7 @@ void SpaceshipCollisionComponent::Update(std::shared_ptr<GameObject> gameObject,
 	}
 }
 
-void SpaceshipCollisionComponent::ProcessCollision 
-(std::shared_ptr<GameObject> gameObject, std::shared_ptr<GameObject> gameObjectCollided)
+void SpaceshipCollisionComponent::ProcessCollision (std::shared_ptr<GameObject> gameObject, std::shared_ptr<GameObject> gameObjectCollided)
 {
 	gameObject->GetHealthComponent()->TakeDamage1HP();
 }

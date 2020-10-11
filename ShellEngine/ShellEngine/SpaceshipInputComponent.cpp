@@ -87,14 +87,14 @@ void SpaceshipInputComponent::Update(std::shared_ptr<GameObject> gameObject, flo
 			if (inputPointer->KeyPressed(DIK_SPACE) && timer >= SHOT_TIMER)
 			{
 				Vector2D shipFront;
-				shipFront.setBearing(angle, 100.0f);		//Make sure each bullet starts perfectly infront of the ship
+				shipFront.setBearing(angle, 105.0f);		//Make sure each bullet starts perfectly infront of the ship
 
 				Vector2D frontOfShip = position + shipFront;
 				pSoundEngine->Play(shootSound);
 
 				std::shared_ptr<GameObject> bullet = objectManager->Create(GameObjectType::BULLET);
 				
-				//Set the bullet angle and starting position using the ship current angle and position + a bit extra
+				//Set the bullet angle and starting position using the ship current angle and position
 				bullet->SetPosition(frontOfShip);
 				bullet->SetAngle(gameObject->GetAngle());
 				objectManager->AddObject(bullet);

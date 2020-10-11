@@ -13,23 +13,23 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &
 	const float SCALE = 6.0f;	//scale of the bullets
 
 	//components
-	//std::shared_ptr<BulletRenderComponent> bulletRenderComponent (new BulletRenderComponent());
 	std::shared_ptr<RenderComponent> renderComponent(new RenderComponent());
-	std::shared_ptr<BulletCollisionComponent> bulletCollisionComponent (new BulletCollisionComponent(std::shared_ptr<Circle2D> (new Circle2D())));
-	std::shared_ptr<BulletPhysicsComponent> bulletPhysicsComponent (new BulletPhysicsComponent());
-
-	std::shared_ptr<GameObject> gameObject
+	std::shared_ptr<BulletCollisionComponent> bulletCollisionComponent
 	(
-		new GameObject
+		new BulletCollisionComponent
 		(
-			//passing the created components
-			renderComponent, 
-			bulletPhysicsComponent, 
-			bulletCollisionComponent, 
-			nullptr,
-			nullptr
+			std::shared_ptr<Circle2D> (new Circle2D())
 		)
 	);
+	std::shared_ptr<BulletPhysicsComponent> bulletPhysicsComponent (new BulletPhysicsComponent());
+
+	std::vector<std::shared_ptr<Component>> components;
+	components.push_back(renderComponent);
+	components.push_back(bulletCollisionComponent);
+	components.push_back(bulletPhysicsComponent);
+
+	std::shared_ptr<GameObject> gameObject(new GameObject(components));
+	gameObject->SetCollisionComponent(bulletCollisionComponent);
 
 	//Bullet image
 	renderComponent->LoadImage(gameObject, L"bullet.bmp");
@@ -40,5 +40,6 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &
 	gameObject->SetScale(SCALE);
 	gameObject->SetGameObjectType(GameObjectType::BULLET);
 
+	//return nullptr;
 	return gameObject;
 }
