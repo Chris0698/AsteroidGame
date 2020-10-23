@@ -172,6 +172,7 @@
     <ClCompile Include="SpaceshipCollisionComponent.cpp" />
     <ClCompile Include="SpaceshipInputComponent.cpp" />
     <ClCompile Include="SpaceshipPhysicsComponent.cpp" />
+    <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="vector2D.cpp" />
     <ClCompile Include="wincode.cpp" />
   </ItemGroup>
@@ -203,6 +204,7 @@
     <ClInclude Include="SpaceshipCollisionComponent.h" />
     <ClInclude Include="SpaceshipInputComponent.h" />
     <ClInclude Include="SpaceshipPhysicsComponent.h" />
+    <ClInclude Include="SpriteSheet.h" />
     <ClInclude Include="vector2D.h" />
   </ItemGroup>
   <ItemGroup>

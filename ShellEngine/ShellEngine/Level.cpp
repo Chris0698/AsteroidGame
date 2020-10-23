@@ -3,6 +3,7 @@
 
 #include "Level.h"
 
+
 #include <thread>
 
 Level::Level()
@@ -36,10 +37,18 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 
 	//Create some rocks to shoot at
 	CreateRocks();
+
+
+
+	spriteSheet = new SpriteSheet();
+	spriteSheet->LoadSpriteSheet();
+
+
 }
 
 void Level::Update(float frameTime)
 {
+	spriteSheet->TestDrawSpriteSheet();
 	//Timer, if timer exceeds a limit then delete all inactive game objects
 	Level::timer = Level::timer + frameTime;  
 

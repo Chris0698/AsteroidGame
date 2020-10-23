@@ -6,6 +6,11 @@
 #include "mysoundengine.h"
 #include "ObjectManager.h"
 
+
+
+
+#include "SpriteSheet.h"
+
 /*
 Level controls and manages the level
 Multiple different levels would probably be handled by a level manager class 
@@ -44,6 +49,8 @@ public:
 private:
 	//Create some rocks and displays them
 	void CreateRocks();
+
+	SpriteSheet* spriteSheet;
 
 	//Background music
 	SoundIndex backgroundMusic;
