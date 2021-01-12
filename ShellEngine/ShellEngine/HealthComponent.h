@@ -8,7 +8,7 @@
 
 //forward class dec to stop circle dependacy
 class GameObject;
-class ObjectManager;
+class GameObjectFactory;
 
 //Health for each object that contains the component
 //Should probably have a health UI to go with this component
@@ -18,16 +18,16 @@ public:
 	//Constructor
 	//objectManager -> Object Manager in use
 	//startingHealth -> Starting health the object has
-	HealthComponent(std::shared_ptr<ObjectManager> objectManager, int startingHealth);
+	HealthComponent(std::shared_ptr<GameObjectFactory> objectManager, int startingHealth);
 
 	//Initialise the component
 	void Initialise();
 
 	//Reduce the game object health by 1
-	void TakeDamage1HP();
+	void TakeDamage1HP(std::shared_ptr<GameObject> gameObject);
 
 	//redce the game object by the parameter
-	void TakeDamage(int damage);
+	void TakeDamage(int damage, std::shared_ptr<GameObject> gameObject);
 
 	//Check if the game object still alive
 	//gameObject -> game object to be checked

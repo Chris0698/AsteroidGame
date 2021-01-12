@@ -27,7 +27,7 @@ void RockCollisionComponent::ProcessCollision (std::shared_ptr<GameObject> gameO
 	if (gameObjectCollided->GetGameObjectType() != GameObjectType::ROCK)
 	{
 		//reduce it HP by 1
-		gameObject->GetHealthComponent()->TakeDamage1HP();
+		gameObject->GetHealthComponent()->TakeDamage1HP(gameObject);
 	}
 }
 

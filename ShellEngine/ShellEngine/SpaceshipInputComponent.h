@@ -3,7 +3,7 @@
 
 #pragma once
 #include "InputComponent.h"
-#include "ObjectManager.h"
+#include "GameObjectFactory.h"
 #include "mysoundengine.h"
 
 //Class for user input for spaceship
@@ -12,7 +12,7 @@ class SpaceshipInputComponent : public InputComponent
 public:
 	//Constructor for the input component
 	//objectManager -> object manager that stores the objects
-	SpaceshipInputComponent(std::shared_ptr<ObjectManager> objectManager);
+	SpaceshipInputComponent(std::shared_ptr<GameObjectFactory> objectManager);
 
 	//Update the game object
 	//gameObject -> the reference to the game object to be updated. 

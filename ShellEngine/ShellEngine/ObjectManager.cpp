@@ -103,27 +103,3 @@ void ObjectManager::CheckAllCollisions()
 		}
 	}
 }
-
-void ObjectManager::Register(GameObjectType gameObjectType, gameObjectCreationMethod gameObjectCreationMethod)
-{
-	//insert into the map
-	ObjectManager::objectMap.insert(std::make_pair(gameObjectType, gameObjectCreationMethod));
-}
-
-std::shared_ptr<GameObject> ObjectManager::Create(GameObjectType gameObjectType)
-{
-	//Get an interator element to the game object type
-	std::pair<GameObjectType, gameObjectCreationMethod> pair = *(objectMap.find(gameObjectType));
-
-	//extract the second element into a function 
-	gameObjectCreationMethod function = pair.second;
-
-	//Return the second element with this pointer
-	return function(ObjectManager::GetPointer());
-}
-
-std::shared_ptr<ObjectManager> ObjectManager::GetPointer()
-{
-	//get a pointer to the object
-	return shared_from_this();
-}

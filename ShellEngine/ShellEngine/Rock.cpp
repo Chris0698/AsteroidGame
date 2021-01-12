@@ -6,10 +6,11 @@
 #include "RockPhysicsComponent.h"
 #include "GameObject.h"
 #include "HealthComponent.h"
+#include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type rock 
 //objectManager -> object manager of the game
-inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager> &objectManager) 
+inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<GameObjectFactory> &objectManager) 
 {
 	int startingHealth = 1;
 

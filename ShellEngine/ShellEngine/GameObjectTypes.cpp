@@ -1,11 +1,15 @@
 //cpp file to game object type enum class
 
-#include "GameObjectTypes.h"
-#include "ObjectManager.h"
-#include "Spaceship.cpp"
-#include "Rock.cpp"
-#include "Explosion.cpp"
-#include "Bullet.cpp"
+//TO BE REMOVED
+
+//#include "GameObjectTypes.h"
+//#include "ObjectManager.h"
+//#include "Spaceship.cpp"
+//#include "Rock.cpp"
+//#include "Explosion.cpp"
+//#include "Bullet.cpp"
+
+/*
 
 void ObjectManager::RegisterAllObjects()
 {
@@ -14,3 +18,4 @@ void ObjectManager::RegisterAllObjects()
 	Register(GameObjectType::BULLET, CreateBullet);
 	Register(GameObjectType::EXPLOSION, CreateExplosion);
 }
+*/

@@ -5,10 +5,11 @@
 #include "BulletCollisionComponent.h"
 #include "BulletPhysicsComponent.h"
 #include "GameObject.h"
+#include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type bullet 
 //objectManager -> object manager of the game
-inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &objectManager)
+inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<GameObjectFactory> &objectManager)
 {
 	const float SCALE = 6.0f;	//scale of the bullets
 

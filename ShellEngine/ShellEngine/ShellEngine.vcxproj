@@ -153,6 +153,7 @@
     <ClCompile Include="ExplosionRenderComponent.cpp" />
     <ClCompile Include="gamecode.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectFactory.cpp" />
     <ClCompile Include="GameObjectTypes.cpp" />
     <ClCompile Include="gametimer.cpp" />
     <ClCompile Include="HealthComponent.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="ExplosionRenderComponent.h" />
     <ClInclude Include="gamecode.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectFactory.h" />
     <ClInclude Include="gametimer.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="InputComponent.h" />

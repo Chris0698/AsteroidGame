@@ -1,0 +1,48 @@
+﻿  SpaceshipInputComponent.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(7): error C2511: 'SpaceshipInputComponent::SpaceshipInputComponent(std::shared_ptr<ObjectManager>)': overloaded member function not found in 'SpaceshipInputComponent'
+  c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.h(10): note: see declaration of 'SpaceshipInputComponent'
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(9): error C2550: 'SpaceshipInputComponent::{ctor}': constructor initializer lists are only allowed on constructor definitions
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(11): error C2597: illegal reference to non-static member 'SpaceshipInputComponent::timer'
+  c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(11): note: see declaration of 'SpaceshipInputComponent::timer'
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipinputcomponent.cpp(18): warning C4305: 'initializing': truncation from 'double' to 'float'
+  SpaceshipCollisionComponent.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(9): error C2511: 'SpaceshipCollisionComponent::SpaceshipCollisionComponent(std::shared_ptr<ObjectManager>,std::shared_ptr<Circle2D>)': overloaded member function not found in 'SpaceshipCollisionComponent'
+  c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.h(8): note: see declaration of 'SpaceshipCollisionComponent'
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(10): error C2550: 'SpaceshipCollisionComponent::{ctor}': constructor initializer lists are only allowed on constructor definitions
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(11): error C2597: illegal reference to non-static member 'SpaceshipCollisionComponent::collisionShape'
+  c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(11): note: see declaration of 'SpaceshipCollisionComponent::collisionShape'
+c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(12): error C2597: illegal reference to non-static member 'CollisionComponent::isCollidable'
+  c:\users\chris\asteroidgame\shellengine\shellengine\spaceshipcollisioncomponent.cpp(12): note: see declaration of 'CollisionComponent::isCollidable'
+  Rock.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(27): error C2664: 'RockCollisionComponent::RockCollisionComponent(RockCollisionComponent &&)': cannot convert argument 1 from 'std::shared_ptr<GameObjectFactory>' to 'std::shared_ptr<ObjectManager>'
+  c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(27): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(78): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(79): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ObjectManager.cpp
+  HealthComponent.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.h(47): error C2065: 'ObjectManager': undeclared identifier
+c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.h(47): error C2923: 'std::shared_ptr': 'ObjectManager' is not a valid template type argument for parameter '_Ty'
+c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.h(49): warning C4624: 'HealthComponent': destructor was implicitly defined as deleted
+c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.cpp(6): error C2511: 'HealthComponent::HealthComponent(std::shared_ptr<ObjectManager>,int)': overloaded member function not found in 'HealthComponent'
+  c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.h(15): note: see declaration of 'HealthComponent'
+c:\users\chris\asteroidgame\shellengine\shellengine\healthcomponent.cpp(7): error C2550: 'HealthComponent::{ctor}': constructor initializer lists are only allowed on constructor definitions
+  GameObjectFactory.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(27): error C2664: 'RockCollisionComponent::RockCollisionComponent(RockCollisionComponent &&)': cannot convert argument 1 from 'std::shared_ptr<GameObjectFactory>' to 'std::shared_ptr<ObjectManager>'
+  c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(27): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(78): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(79): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(90): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\rock.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  wincode.cpp
+  gamecode.cpp
+c:\users\chris\asteroidgame\shellengine\shellengine\gamecode.cpp(302): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\chris\asteroidgame\shellengine\shellengine\gamecode.cpp(338): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  RockCollisionComponent.cpp
+  Level.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Spaceship.cpp

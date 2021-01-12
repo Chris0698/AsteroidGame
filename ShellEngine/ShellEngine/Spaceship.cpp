@@ -6,11 +6,12 @@
 #include "SpaceshipPhysicsComponent.h"
 #include "SpaceshipCollisionComponent.h"
 #include "GameObject.h"
+#include "GameObjectFactory.h"
 #include "HealthComponent.h"
 
 //global function to create a gameobject of the type spaceship 
 //objectManager -> object manager of the game
-inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager> &objectManager)
+inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<GameObjectFactory> &objectManager)
 {
 	const float SCALE = 1.25f;
 	int startingHealth = 1;

@@ -85,7 +85,7 @@ struct MYVERTEX
 		// Sets the pointer to nullptr
 		MyFont();
 	};
-
+	
 	HWND m_Hwnd;								// The handle to the window
 	IDirect3D9* m_lpD3D;					   // Pointer to direct draw
 	IDirect3DDevice9* m_lpD3DDevice;		// Pointer to the D3D device

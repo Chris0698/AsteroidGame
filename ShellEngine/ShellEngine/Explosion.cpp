@@ -3,10 +3,11 @@
 
 #include "ExplosionRenderComponent.h"
 #include "GameObject.h"
+#include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type explosion 
 //objectManager -> object manager of the game
-inline std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<ObjectManager>& objectManager)
+inline std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<GameObjectFactory>& objectManager)
 {
 	std::shared_ptr<ExplosionRenderComponent> explosionRenderComponent(new ExplosionRenderComponent());
 	explosionRenderComponent->LoadImages();		//load the explosion images into memory

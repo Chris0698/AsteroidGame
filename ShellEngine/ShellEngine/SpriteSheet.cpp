@@ -21,6 +21,14 @@ void SpriteSheet::TestDrawSpriteSheet()
 	);
 }
 
+void SpriteSheet::TestGetRock()
+{
+	//using 2D Vector get a rock at the top of the sheet, somehow
+
+}
+
+
+
 void SpriteSheet::GetImage()
 {
 	

@@ -24,31 +24,31 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 	Level::timer = 0.0f;
 	Level::objectManager = std::shared_ptr<ObjectManager>(new ObjectManager());
 	Level::numberOfRocks = startingNumberOfRocks;
-	Level::objectManager->RegisterAllObjects();
+//	Level::objectManager->RegisterAllObjects();
 	Level::playerLivesRemaining = numberOfPlayerLives; //Code relating to players lives ain't used elsewhere in game
 
 	//this creates a new game object of the type spaceship by calling create in object manager by passing 
 	//the game object type from an enum class. Finally then add the object to the list
 	//An alt approach is to directly call the CreateShip global function
-	std::shared_ptr<GameObject> spaceship = objectManager->Create(GameObjectType::SHIP);
+//	std::shared_ptr<GameObject> spaceship = objectManager->Create(GameObjectType::SHIP);
 	//std::shared_ptr<GameObject> spaceship = CreateShip(objectManager);
 
-	Level::objectManager->AddObject(spaceship);
+//	Level::objectManager->AddObject(spaceship);
 
 	//Create some rocks to shoot at
 	CreateRocks();
 
 
 
-	spriteSheet = new SpriteSheet();
-	spriteSheet->LoadSpriteSheet();
+	//spriteSheet = new SpriteSheet();
+	//spriteSheet->LoadSpriteSheet();
 
 
 }
 
 void Level::Update(float frameTime)
 {
-	spriteSheet->TestDrawSpriteSheet();
+	//spriteSheet->TestDrawSpriteSheet();
 	//Timer, if timer exceeds a limit then delete all inactive game objects
 	Level::timer = Level::timer + frameTime;  
 
@@ -151,7 +151,7 @@ void Level::CreateRocks()
 	for (int i = 0; i < Level::numberOfRocks; i++)
 	{
 		//creates a new space rock
-		std::shared_ptr<GameObject> spaceRock = objectManager->Create(GameObjectType::ROCK);
-		objectManager->AddObject(spaceRock);
+//		std::shared_ptr<GameObject> spaceRock = objectManager->Create(GameObjectType::ROCK);
+//		objectManager->AddObject(spaceRock);
 	}
 }

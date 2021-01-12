@@ -7,6 +7,7 @@
 #include <memory>
 #include "GameObjectTypes.h"
 #include "mysoundengine.h"
+//#include "GameObjectFactory.h"
 
 #include "RenderComponent.h"
 #include "InputComponent.h"
@@ -165,19 +166,3 @@ private:
 
 	PictureIndex image;
 };
-
-//Global function to create an explosion
-//objectManager -> Object manager of the game
-std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<ObjectManager> &objectManager);
-
-//Global function to create a ship
-//objectManager -> Object manager of the game
-std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager> &objectManager);
-
-//Global function for creating bullets
-//objectManager -> Object manager of the game
-std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager> &objectManager);
-
-//Global function to create a rock
-//objectManager -> Object manager of the game
-std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager> &objectManager);
