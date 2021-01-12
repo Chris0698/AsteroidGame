@@ -5,8 +5,8 @@
 #include "GameObject.h"
 #include "ObjectManager.h"
 
-SpaceshipCollisionComponent::SpaceshipCollisionComponent( std::shared_ptr<ObjectManager> objectManager, 
-	std::shared_ptr<Circle2D> collisionShape) : objectManager(objectManager)
+SpaceshipCollisionComponent::SpaceshipCollisionComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory,
+	std::shared_ptr<Circle2D> collisionShape) //: gameObjectFactory(gameObjectFactory)
 {
 	SpaceshipCollisionComponent::collisionShape = collisionShape;
 	CollisionComponent::isCollidable = true;

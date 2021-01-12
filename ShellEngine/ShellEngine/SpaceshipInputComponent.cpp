@@ -4,8 +4,8 @@
 #include "SpaceshipInputComponent.h"
 #include "GameObject.h"
 
-SpaceshipInputComponent::SpaceshipInputComponent(std::shared_ptr<ObjectManager> objectManager) :
-	objectManager(objectManager)
+SpaceshipInputComponent::SpaceshipInputComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory)
+	//:objectManager(objectManager)
 {
 	//Allow a bullet to be shot when first spawn in
 	SpaceshipInputComponent::timer = SpaceshipInputComponent::SHOT_TIMER;

@@ -7,7 +7,6 @@
 #include <memory>
 #include "GameObjectTypes.h"
 #include "mysoundengine.h"
-//#include "GameObjectFactory.h"
 
 #include "RenderComponent.h"
 #include "InputComponent.h"

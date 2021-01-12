@@ -18,7 +18,7 @@ public:
 	//Constructor
 	//objectManager -> Object Manager in use
 	//startingHealth -> Starting health the object has
-	HealthComponent(std::shared_ptr<GameObjectFactory> objectManager, int startingHealth);
+	HealthComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory, int startingHealth);
 
 	//Initialise the component
 	void Initialise();
@@ -44,6 +44,6 @@ public:
 private:
 	//General variables that maybe used
 	int currentHealth;
-	std::shared_ptr<ObjectManager> objectManager;	//reference to the object manager in use
+//	std::shared_ptr<ObjectManager> objectManager;	//reference to the object manager in use
 	SoundIndex destructionSound;
 };

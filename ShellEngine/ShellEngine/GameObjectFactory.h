@@ -28,8 +28,6 @@ private:
 
 	void RegisterObject(GameObjectType gameObjectType, GameObjectCreationMethod gameObjectCreation);
 
-	bool objectsRegistered;	//initalised false, turned to true to prevent object reinitialisation
-
 	static GameObjectFactory* Instance;
 
 	//Map to store each object 

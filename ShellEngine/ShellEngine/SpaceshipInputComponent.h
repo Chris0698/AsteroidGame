@@ -12,7 +12,7 @@ class SpaceshipInputComponent : public InputComponent
 public:
 	//Constructor for the input component
 	//objectManager -> object manager that stores the objects
-	SpaceshipInputComponent(std::shared_ptr<GameObjectFactory> objectManager);
+	SpaceshipInputComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory);
 
 	//Update the game object
 	//gameObject -> the reference to the game object to be updated. 
@@ -32,5 +32,5 @@ private:
 	SoundIndex shootSound;
 
 	//Reference to the object manager
-	std::shared_ptr<ObjectManager> objectManager;
+	//std::shared_ptr<ObjectManager> objectManager;
 };

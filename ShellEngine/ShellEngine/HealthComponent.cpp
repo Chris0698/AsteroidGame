@@ -2,8 +2,8 @@
 #include "ObjectManager.h"
 #include "GameObject.h"
 
-HealthComponent::HealthComponent(std::shared_ptr<ObjectManager> objectManager, int startingHealth)
-	:objectManager(objectManager), currentHealth(startingHealth)
+HealthComponent::HealthComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory, int startingHealth)
+	: currentHealth(startingHealth) //:objectManager(objectManager),
 {
 
 }

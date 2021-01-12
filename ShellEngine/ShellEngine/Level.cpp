@@ -3,7 +3,6 @@
 
 #include "Level.h"
 
-
 #include <thread>
 
 Level::Level()
@@ -34,6 +33,18 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 	//std::shared_ptr<GameObject> spaceship = CreateShip(objectManager);
 
 //	Level::objectManager->AddObject(spaceship);
+
+
+	GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance();
+	gameObjectFactory->RegisterAllObjects();
+	std::shared_ptr<GameObject> spaceship = gameObjectFactory->Create(GameObjectType::SHIP);
+
+	objectManager->AddObject(spaceship);
+
+
+
+
+
 
 	//Create some rocks to shoot at
 	CreateRocks();
@@ -153,5 +164,9 @@ void Level::CreateRocks()
 		//creates a new space rock
 //		std::shared_ptr<GameObject> spaceRock = objectManager->Create(GameObjectType::ROCK);
 //		objectManager->AddObject(spaceRock);
+
+	//	GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance();
+	//	std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK);
+	//	objectManager->AddObject(rock);
 	}
 }

@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "mysoundengine.h"
 #include "ObjectManager.h"
-
+#include "GameObjectFactory.h"
 
 
 

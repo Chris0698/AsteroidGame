@@ -9,9 +9,13 @@
 #include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type rock 
-//objectManager -> object manager of the game
-inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<GameObjectFactory> &objectManager) 
+inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<GameObjectFactory>& gameObjectFactory)
 {
+	return nullptr;
+
+
+
+	/*
 	int startingHealth = 1;
 
 	std::shared_ptr<RenderComponent> renderComponent(new RenderComponent());
@@ -95,5 +99,5 @@ inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<GameObjectFactory>
 	gameObject->SetCollisionComponent(rockCollisionComponent);
 	gameObject->SetHealthComponent(healthComponent);
 
-	return gameObject;
+	return gameObject; */
 }

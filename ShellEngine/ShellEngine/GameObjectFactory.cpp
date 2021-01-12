@@ -23,14 +23,10 @@ GameObjectFactory* GameObjectFactory::GetInstance()
 
 void GameObjectFactory::RegisterAllObjects()
 {
-    if (!objectsRegistered)
-    {
-        RegisterObject(GameObjectType::SHIP, CreateShip);
-        RegisterObject(GameObjectType::ROCK, CreateRock);
-        RegisterObject(GameObjectType::BULLET, CreateBullet);
-        RegisterObject(GameObjectType::EXPLOSION, CreateExplosion);
-        objectsRegistered = true;
-    }
+    RegisterObject(GameObjectType::SHIP, CreateShip);
+    RegisterObject(GameObjectType::ROCK, CreateRock);
+    RegisterObject(GameObjectType::BULLET, CreateBullet);
+    RegisterObject(GameObjectType::EXPLOSION, CreateExplosion);
 }
 
 std::shared_ptr<GameObject> GameObjectFactory::Create(GameObjectType gameObjectType)

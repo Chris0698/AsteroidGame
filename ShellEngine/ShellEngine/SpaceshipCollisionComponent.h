@@ -11,7 +11,7 @@ public:
 	//constructor of the component
 	//objectManager -> reference to the object manager in use
 	//collisionShape -> collision shape used for spaceship, in this case a circle 
-	SpaceshipCollisionComponent(std::shared_ptr<GameObjectFactory> objectManager, std::shared_ptr<Circle2D> collisionShape);
+	SpaceshipCollisionComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory, std::shared_ptr<Circle2D> collisionShape);
 
 	//Places the collision shape
 	//gameObject -> The shape it belongs to.
@@ -26,7 +26,7 @@ public:
 	std::shared_ptr<IShape2D> GetHitBoxShape() override;
 private:
 	//Reference to the obhect manager in use throughout the game
-	std::shared_ptr<ObjectManager> objectManager;
+	//std::shared_ptr<GameObjectFactory> gameObjectFactory;
 
 	//Collision shape used for the spaceship
 	std::shared_ptr<Circle2D> collisionShape;;
