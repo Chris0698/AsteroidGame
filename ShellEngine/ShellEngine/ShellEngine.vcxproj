@@ -154,7 +154,6 @@
     <ClCompile Include="gamecode.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectFactory.cpp" />
-    <ClCompile Include="GameObjectTypes.cpp" />
     <ClCompile Include="gametimer.cpp" />
     <ClCompile Include="HealthComponent.cpp" />
     <ClCompile Include="InputComponent.cpp" />

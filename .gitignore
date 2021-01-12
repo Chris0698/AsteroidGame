@@ -1,2 +1,2 @@
-*.vs/
-*.obj
+/ShellEngine/ShellEngine/Debug
+/ShellEngine/ShellEngine/Release
