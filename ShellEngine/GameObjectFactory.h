@@ -7,14 +7,14 @@
 #include <memory>
 #include <map>
 
-class GameObjectFactory : public std::enable_shared_from_this<GameObjectFactory>
+class GameObjectFactory
 {
 public:	
 	static GameObjectFactory* GetInstance();
 
 	void RegisterAllObjects();
 
-	std::shared_ptr<GameObject> Create(GameObjectType gameObjectType);
+	std::shared_ptr<GameObject> Create(GameObjectType gameObjectType, std::shared_ptr<ObjectManager> pointer);
 	
 	~GameObjectFactory();
 private:
@@ -30,8 +30,6 @@ private:
 
 	//Map to store each object 
 	std::map<GameObjectType, GameObjectCreationMethod> objectMap;
-
-	std::shared_ptr<GameObjectFactory> GetPointer();
 };
 
 //globals to create GameObjects

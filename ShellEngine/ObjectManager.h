@@ -9,7 +9,7 @@
 #include <map>
 
 //Object managers handles and manages all game objects in the current game
-class ObjectManager /* : public std::enable_shared_from_this<ObjectManager> */
+class ObjectManager
 {
 public:
 	//Empty constructor for Object Manager

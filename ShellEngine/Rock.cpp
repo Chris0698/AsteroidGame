@@ -11,11 +11,6 @@
 //global function to create a gameobject of the type rock 
 inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager>& objectManager)
 {
-	return nullptr;
-
-
-
-	/*
 	int startingHealth = 1;
 
 	std::shared_ptr<RenderComponent> renderComponent(new RenderComponent());
@@ -99,5 +94,5 @@ inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager>& ob
 	gameObject->SetCollisionComponent(rockCollisionComponent);
 	gameObject->SetHealthComponent(healthComponent);
 
-	return gameObject; */
+	return gameObject; 
 }

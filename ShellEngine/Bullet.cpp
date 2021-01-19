@@ -40,6 +40,5 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager>& 
 	gameObject->SetScale(SCALE);
 	gameObject->SetGameObjectType(GameObjectType::BULLET);
 
-	//return nullptr;
 	return gameObject;
 }

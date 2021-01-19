@@ -29,7 +29,8 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 	//cant do GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance(); , crashes the thing dead
 	std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
 	gameObjectFactory->RegisterAllObjects();
-	std::shared_ptr<GameObject> spaceship = gameObjectFactory->Create(GameObjectType::SHIP);
+
+	std::shared_ptr<GameObject> spaceship = gameObjectFactory->Create(GameObjectType::SHIP, objectManager);
 
 	objectManager->AddObject(spaceship);
 
@@ -149,8 +150,8 @@ void Level::CreateRocks()
 	//Create rocks and place them with in the screen 
 	for (int i = 0; i < Level::numberOfRocks; i++)
 	{
-		//std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
-		//std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK);
-		//objectManager->AddObject(rock);
+		std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
+		std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK, objectManager);
+		objectManager->AddObject(rock);
 	}
 }
