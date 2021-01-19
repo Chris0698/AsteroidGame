@@ -6,7 +6,7 @@
 #include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type explosion 
-inline std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<GameObjectFactory>& gameObjectFactory)
+inline std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<ObjectManager>& objectManager)
 {
 	return nullptr;
 	std::shared_ptr<ExplosionRenderComponent> explosionRenderComponent(new ExplosionRenderComponent());

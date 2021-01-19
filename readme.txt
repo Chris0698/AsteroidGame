@@ -4,4 +4,4 @@ An aspect of the assignment was "an advance component" which could have been a c
 
 This project replied on vector maths for rocks and spaceship direction and angle of travel. Debugging was also heavily required to check for null pointers and other unexpected behavior that occured throughout development. 
 
-Should you wish to run the .exe, the executable is located in the ShellEngine/Debug directories. 
+To build the project you will need Microsoft DirectX June 2010 SDK. Install the SDK then in project properties go to: 

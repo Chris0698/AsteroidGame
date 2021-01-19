@@ -8,14 +8,8 @@
 #include "GameObjectFactory.h"
 
 //global function to create a gameobject of the type bullet 
-inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<GameObjectFactory>& gameObjectFactory)
+inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager>& objectManager)
 {
-	return nullptr;
-
-
-
-
-
 	const float SCALE = 6.0f;	//scale of the bullets
 
 	//components

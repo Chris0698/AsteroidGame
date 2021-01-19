@@ -3,6 +3,7 @@
 
 #pragma once
 #include "InputComponent.h"
+#include "ObjectManager.h"
 #include "GameObjectFactory.h"
 #include "mysoundengine.h"
 
@@ -12,7 +13,7 @@ class SpaceshipInputComponent : public InputComponent
 public:
 	//Constructor for the input component
 	//objectManager -> object manager that stores the objects
-	SpaceshipInputComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory);
+	SpaceshipInputComponent(std::shared_ptr<ObjectManager> objectManager);
 
 	//Update the game object
 	//gameObject -> the reference to the game object to be updated. 
@@ -22,15 +23,13 @@ public:
 	void Initialise();
 
 private:
-	//Delay between shots
+	
 	const float SHOT_TIMER = 1.0f;
 
-	//Timer for shots 
 	float timer;
 
-	//Audio sound for each shot
 	SoundIndex shootSound;
 
-	//Reference to the object manager
-	//std::shared_ptr<ObjectManager> objectManager;
+	//Object manager required because bullets are created in this class
+	std::shared_ptr<ObjectManager> objectManager;
 };

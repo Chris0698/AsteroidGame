@@ -11,7 +11,6 @@
 //forward declerations 
 class GameObject;
 class ObjectManager;
-class GameObjectFactory;
 
 //Abstract class for handling any collision
 class CollisionComponent : public Component

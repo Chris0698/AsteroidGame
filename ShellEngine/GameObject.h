@@ -14,6 +14,8 @@
 #include "PhysicsComponent.h"
 #include "HealthComponent.h"
 
+class HealthComponent;
+
 /*
 Gameobject class for handling all game objects
 	-extends enable_shared_from_this<T> due to *this not being able to be used in smart pointers

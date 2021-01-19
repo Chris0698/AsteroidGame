@@ -14,17 +14,15 @@ public:
 
 	void RegisterAllObjects();
 
-	//Create a game object that is registered in the game
-	//gameObjectType -> the key of the object
 	std::shared_ptr<GameObject> Create(GameObjectType gameObjectType);
 	
 	~GameObjectFactory();
 private:
 	GameObjectFactory();
 
-	//posh way to rename things
+	//posh way to rename things, renamed to GameObjectCreationMethod which takes a shared pointer of object manager
 	//typedef {variableType} (VariableTypeNewName)
-	typedef std::shared_ptr<GameObject>(*GameObjectCreationMethod) (std::shared_ptr<GameObjectFactory>&);
+	typedef std::shared_ptr<GameObject>(*GameObjectCreationMethod) (std::shared_ptr<ObjectManager>&);
 
 	void RegisterObject(GameObjectType gameObjectType, GameObjectCreationMethod gameObjectCreation);
 
@@ -33,14 +31,13 @@ private:
 	//Map to store each object 
 	std::map<GameObjectType, GameObjectCreationMethod> objectMap;
 
-	//Get a reference to the object manager
 	std::shared_ptr<GameObjectFactory> GetPointer();
 };
 
 //globals to create GameObjects
-std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<GameObjectFactory>& gameObjectFactory);
-std::shared_ptr<GameObject> CreateShip(std::shared_ptr<GameObjectFactory>& gameObjectFactory);
-std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<GameObjectFactory>& gameObjectFactory);
-std::shared_ptr<GameObject> CreateRock(std::shared_ptr<GameObjectFactory>& gameObjectFactory);
+std::shared_ptr<GameObject> CreateExplosion(std::shared_ptr<ObjectManager>& objectManager);
+std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager>& objectManager);
+std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager>& objectManager);
+std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager>& objectManager);
 
 #endif // !_GAME_OBJECT_FACTORY_

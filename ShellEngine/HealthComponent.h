@@ -5,10 +5,11 @@
 #include <memory>
 #include "mysoundengine.h"
 #include "Component.h"
+#include "GameObjectFactory.h"
 
 //forward class dec to stop circle dependacy
 class GameObject;
-class GameObjectFactory;
+class ObjectManager;
 
 //Health for each object that contains the component
 //Should probably have a health UI to go with this component
@@ -18,7 +19,7 @@ public:
 	//Constructor
 	//objectManager -> Object Manager in use
 	//startingHealth -> Starting health the object has
-	HealthComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory, int startingHealth);
+	HealthComponent(std::shared_ptr<ObjectManager> objectManager, int startingHealth);
 
 	//Initialise the component
 	void Initialise();
@@ -42,8 +43,9 @@ public:
 	void SetHealth(int newHealth);
 
 private:
-	//General variables that maybe used
 	int currentHealth;
-//	std::shared_ptr<ObjectManager> objectManager;	//reference to the object manager in use
+
+	std::shared_ptr<ObjectManager> objectManager;
+
 	SoundIndex destructionSound;
 };

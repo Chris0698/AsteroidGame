@@ -2,8 +2,8 @@
 #include "ObjectManager.h"
 #include "GameObject.h"
 
-HealthComponent::HealthComponent(std::shared_ptr<GameObjectFactory> gameObjectFactory, int startingHealth)
-	: currentHealth(startingHealth) //:objectManager(objectManager),
+HealthComponent::HealthComponent(std::shared_ptr<ObjectManager> objectManager, int startingHealth)
+	: objectManager(objectManager), currentHealth(startingHealth)
 {
 
 }
@@ -51,6 +51,13 @@ void HealthComponent::Death(std::shared_ptr<GameObject> gameObject)
 
 //	explosion->SetPosition(gameObject->GetPosition());
 //	explosion->SetScale(gameObject->GetScale());
+
+
+	std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
+	std::shared_ptr<GameObject> explosion = factory->Create(GameObjectType::EXPLOSION);
+	explosion->SetPosition(gameObject->GetPosition());
+	explosion->SetScale(gameObject->GetScale());
+	objectManager->AddObject(explosion);
 
 	//Play a sound, in space, in a vacuum, where no one can here you. 
 	//But hey if we adding friction then might as well. Who knows maybe a space monster can hear it.... 

@@ -10,20 +10,20 @@
 #include "HealthComponent.h"
 
 //global function to create a gameobject of the type spaceship 
-inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<GameObjectFactory>& gameObjectFactory)
+inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager>& objectManager)
 {
 	const float SCALE = 1.25f;
 	int startingHealth = 1;
 
 	std::shared_ptr<RenderComponent> shipRenderComponent (new RenderComponent());
-	std::shared_ptr<SpaceshipInputComponent> shipInputComponent (new SpaceshipInputComponent(gameObjectFactory));
+	std::shared_ptr<SpaceshipInputComponent> shipInputComponent (new SpaceshipInputComponent(objectManager));
 	std::shared_ptr<SpaceshipPhysicsComponent> shipPhysicsComponent (new SpaceshipPhysicsComponent());
-	std::shared_ptr<HealthComponent> healthComponent(new HealthComponent(gameObjectFactory, startingHealth));
+	std::shared_ptr<HealthComponent> healthComponent(new HealthComponent(objectManager, startingHealth));
 	std::shared_ptr<SpaceshipCollisionComponent> shipCollisionComponent 
 	(
 		new SpaceshipCollisionComponent
 		(
-			gameObjectFactory,
+			objectManager,
 			std::shared_ptr<Circle2D> (new Circle2D())
 		)
 	);

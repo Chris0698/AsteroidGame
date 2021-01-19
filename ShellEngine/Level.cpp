@@ -23,27 +23,15 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 	Level::timer = 0.0f;
 	Level::objectManager = std::shared_ptr<ObjectManager>(new ObjectManager());
 	Level::numberOfRocks = startingNumberOfRocks;
-//	Level::objectManager->RegisterAllObjects();
 	Level::playerLivesRemaining = numberOfPlayerLives; //Code relating to players lives ain't used elsewhere in game
 
-	//this creates a new game object of the type spaceship by calling create in object manager by passing 
-	//the game object type from an enum class. Finally then add the object to the list
-	//An alt approach is to directly call the CreateShip global function
-//	std::shared_ptr<GameObject> spaceship = objectManager->Create(GameObjectType::SHIP);
-	//std::shared_ptr<GameObject> spaceship = CreateShip(objectManager);
 
-//	Level::objectManager->AddObject(spaceship);
-
-
-	GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance();
+	//cant do GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance(); , crashes the thing dead
+	std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
 	gameObjectFactory->RegisterAllObjects();
 	std::shared_ptr<GameObject> spaceship = gameObjectFactory->Create(GameObjectType::SHIP);
 
 	objectManager->AddObject(spaceship);
-
-
-
-
 
 
 	//Create some rocks to shoot at
@@ -161,12 +149,8 @@ void Level::CreateRocks()
 	//Create rocks and place them with in the screen 
 	for (int i = 0; i < Level::numberOfRocks; i++)
 	{
-		//creates a new space rock
-//		std::shared_ptr<GameObject> spaceRock = objectManager->Create(GameObjectType::ROCK);
-//		objectManager->AddObject(spaceRock);
-
-	//	GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance();
-	//	std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK);
-	//	objectManager->AddObject(rock);
+		//std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
+		//std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK);
+		//objectManager->AddObject(rock);
 	}
 }
