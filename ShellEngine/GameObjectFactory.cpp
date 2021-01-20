@@ -40,9 +40,17 @@ std::shared_ptr<GameObject> GameObjectFactory::Create(GameObjectType gameObjectT
     return function(pointer);
 }
 
+void GameObjectFactory::Dispose()
+{
+    delete Instance;
+    Instance = nullptr;
+}
+
+/*
 GameObjectFactory::~GameObjectFactory()
 {
 }
+*/
 
 void GameObjectFactory::RegisterObject(GameObjectType gameObjectType, GameObjectCreationMethod gameObjectCreation)
 {

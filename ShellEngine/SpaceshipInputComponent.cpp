@@ -102,7 +102,9 @@ void SpaceshipInputComponent::Update(std::shared_ptr<GameObject> gameObject, flo
 //				bullet->SetAngle(gameObject->GetAngle());
 //				objectManager->AddObject(bullet);
 
-				std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
+//				std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
+//				std::shared_ptr<GameObject> bullet = factory->Create(GameObjectType::BULLET, objectManager);
+				GameObjectFactory* factory = GameObjectFactory::GetInstance();
 				std::shared_ptr<GameObject> bullet = factory->Create(GameObjectType::BULLET, objectManager);
 				bullet->SetPosition(frontOfShip);
 				bullet->SetAngle(gameObject->GetAngle());

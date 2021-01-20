@@ -27,6 +27,7 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 
 
 	//cant do GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance(); , crashes the thing dead
+	/*
 	std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
 	gameObjectFactory->RegisterAllObjects();
 
@@ -37,13 +38,17 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 
 	//Create some rocks to shoot at
 	CreateRocks();
+	*/
 
-
+	GameObjectFactory* factory = GameObjectFactory::GetInstance();
+	factory->RegisterAllObjects();
+	std::shared_ptr<GameObject> ship = factory->Create(GameObjectType::SHIP, objectManager);
+	objectManager->AddObject(ship);
 
 	//spriteSheet = new SpriteSheet();
 	//spriteSheet->LoadSpriteSheet();
 
-
+	CreateRocks();
 }
 
 void Level::Update(float frameTime)
@@ -98,8 +103,10 @@ void Level::DisplayHUD()
 
 void Level::EndLevel()
 {
-	//Delete all objects at the end of the level
+	//Delete all objects at the end of the level and the factory
 	Level::objectManager->DeleteAll();
+	GameObjectFactory* factory = GameObjectFactory::GetInstance();
+	factory->Dispose();
 }
 
 void Level::GameOver()
@@ -147,11 +154,13 @@ void Level::CreateRocks()
 		screenWidth = 1200;
 	}
 
+	//std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
+	GameObjectFactory* factory = GameObjectFactory::GetInstance();
 	//Create rocks and place them with in the screen 
-	for (int i = 0; i < Level::numberOfRocks; i++)
+	for (int i = 0; i < 10; i++)
 	{
-		std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
-		std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK, objectManager);
+		//std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK, objectManager);
+		std::shared_ptr<GameObject> rock = factory->Create(GameObjectType::ROCK, objectManager);
 		objectManager->AddObject(rock);
 	}
 }

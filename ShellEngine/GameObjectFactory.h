@@ -15,10 +15,13 @@ public:
 	void RegisterAllObjects();
 
 	std::shared_ptr<GameObject> Create(GameObjectType gameObjectType, std::shared_ptr<ObjectManager> pointer);
+
+	void Dispose();
 	
-	~GameObjectFactory();
 private:
 	GameObjectFactory();
+
+	//~GameObjectFactory();
 
 	//posh way to rename things, renamed to GameObjectCreationMethod which takes a shared pointer of object manager
 	//typedef {variableType} (VariableTypeNewName)

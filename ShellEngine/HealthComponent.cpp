@@ -53,7 +53,9 @@ void HealthComponent::Death(std::shared_ptr<GameObject> gameObject)
 //	explosion->SetScale(gameObject->GetScale());
 
 
-	std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
+//	std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
+//	std::shared_ptr<GameObject> explosion = factory->Create(GameObjectType::EXPLOSION, objectManager);
+	GameObjectFactory* factory = GameObjectFactory::GetInstance();
 	std::shared_ptr<GameObject> explosion = factory->Create(GameObjectType::EXPLOSION, objectManager);
 	explosion->SetPosition(gameObject->GetPosition());
 	explosion->SetScale(gameObject->GetScale());
