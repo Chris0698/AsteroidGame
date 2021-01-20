@@ -16,10 +16,7 @@ inline std::shared_ptr<GameObject> CreateBullet(std::shared_ptr<ObjectManager>& 
 	std::shared_ptr<RenderComponent> renderComponent(new RenderComponent());
 	std::shared_ptr<BulletCollisionComponent> bulletCollisionComponent
 	(
-		new BulletCollisionComponent
-		(
-			std::shared_ptr<Circle2D> (new Circle2D())
-		)
+		new BulletCollisionComponent(std::shared_ptr<Circle2D> (new Circle2D()))
 	);
 	std::shared_ptr<BulletPhysicsComponent> bulletPhysicsComponent (new BulletPhysicsComponent());
 

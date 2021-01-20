@@ -9,9 +9,8 @@ class SpaceshipCollisionComponent : public CollisionComponent
 {
 public:
 	//constructor of the component
-	//objectManager -> reference to the object manager in use
 	//collisionShape -> collision shape used for spaceship, in this case a circle 
-	SpaceshipCollisionComponent(std::shared_ptr<ObjectManager> objectManager, std::shared_ptr<Circle2D> collisionShape);
+	SpaceshipCollisionComponent(std::shared_ptr<Circle2D> collisionShape);
 
 	//Places the collision shape
 	//gameObject -> The shape it belongs to.
@@ -25,9 +24,6 @@ public:
 	//Gets the hitbox shape
 	std::shared_ptr<IShape2D> GetHitBoxShape() override;
 private:
-
-	std::shared_ptr<ObjectManager> objectManager;
-
 	//Collision shape used for the spaceship
 	std::shared_ptr<Circle2D> collisionShape;;
 

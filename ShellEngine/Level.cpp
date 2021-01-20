@@ -25,21 +25,6 @@ void Level::Initialise(int startingNumberOfRocks, int numberOfPlayerLives, wchar
 	Level::numberOfRocks = startingNumberOfRocks;
 	Level::playerLivesRemaining = numberOfPlayerLives; //Code relating to players lives ain't used elsewhere in game
 
-
-	//cant do GameObjectFactory* gameObjectFactory = GameObjectFactory::GetInstance(); , crashes the thing dead
-	/*
-	std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
-	gameObjectFactory->RegisterAllObjects();
-
-	std::shared_ptr<GameObject> spaceship = gameObjectFactory->Create(GameObjectType::SHIP, objectManager);
-
-	objectManager->AddObject(spaceship);
-
-
-	//Create some rocks to shoot at
-	CreateRocks();
-	*/
-
 	GameObjectFactory* factory = GameObjectFactory::GetInstance();
 	factory->RegisterAllObjects();
 	std::shared_ptr<GameObject> ship = factory->Create(GameObjectType::SHIP, objectManager);
@@ -154,12 +139,10 @@ void Level::CreateRocks()
 		screenWidth = 1200;
 	}
 
-	//std::shared_ptr<GameObjectFactory> gameObjectFactory(GameObjectFactory::GetInstance());
 	GameObjectFactory* factory = GameObjectFactory::GetInstance();
 	//Create rocks and place them with in the screen 
 	for (int i = 0; i < 10; i++)
 	{
-		//std::shared_ptr<GameObject> rock = gameObjectFactory->Create(GameObjectType::ROCK, objectManager);
 		std::shared_ptr<GameObject> rock = factory->Create(GameObjectType::ROCK, objectManager);
 		objectManager->AddObject(rock);
 	}

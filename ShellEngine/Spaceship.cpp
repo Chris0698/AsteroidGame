@@ -21,11 +21,7 @@ inline std::shared_ptr<GameObject> CreateShip(std::shared_ptr<ObjectManager>& ob
 	std::shared_ptr<HealthComponent> healthComponent(new HealthComponent(objectManager, startingHealth));
 	std::shared_ptr<SpaceshipCollisionComponent> shipCollisionComponent 
 	(
-		new SpaceshipCollisionComponent
-		(
-			objectManager,
-			std::shared_ptr<Circle2D> (new Circle2D())
-		)
+		new SpaceshipCollisionComponent(std::shared_ptr<Circle2D> (new Circle2D()))
 	);
 
 	std::vector<std::shared_ptr<Component>> components;

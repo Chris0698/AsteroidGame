@@ -92,18 +92,6 @@ void SpaceshipInputComponent::Update(std::shared_ptr<GameObject> gameObject, flo
 				Vector2D frontOfShip = position + shipFront;
 				pSoundEngine->Play(shootSound);
 
-				//GameObjectFactory* factory = GameObjectFactory::GetInstance();
-				//std::shared_ptr<GameObject> bullet = factory->Create(GameObjectType::BULLET);
-
-//				std::shared_ptr<GameObject> bullet = objectManager->Create(GameObjectType::BULLET);
-				
-				//Set the bullet angle and starting position using the ship current angle and position
-//				bullet->SetPosition(frontOfShip);
-//				bullet->SetAngle(gameObject->GetAngle());
-//				objectManager->AddObject(bullet);
-
-//				std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
-//				std::shared_ptr<GameObject> bullet = factory->Create(GameObjectType::BULLET, objectManager);
 				GameObjectFactory* factory = GameObjectFactory::GetInstance();
 				std::shared_ptr<GameObject> bullet = factory->Create(GameObjectType::BULLET, objectManager);
 				bullet->SetPosition(frontOfShip);

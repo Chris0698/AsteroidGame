@@ -47,14 +47,6 @@ void HealthComponent::Update(std::shared_ptr<GameObject> gameObject, float frame
 void HealthComponent::Death(std::shared_ptr<GameObject> gameObject)
 {
 	//create an explosion
-//	std::shared_ptr<GameObject> explosion = objectManager->Create(GameObjectType::EXPLOSION);
-
-//	explosion->SetPosition(gameObject->GetPosition());
-//	explosion->SetScale(gameObject->GetScale());
-
-
-//	std::shared_ptr<GameObjectFactory> factory(GameObjectFactory::GetInstance());
-//	std::shared_ptr<GameObject> explosion = factory->Create(GameObjectType::EXPLOSION, objectManager);
 	GameObjectFactory* factory = GameObjectFactory::GetInstance();
 	std::shared_ptr<GameObject> explosion = factory->Create(GameObjectType::EXPLOSION, objectManager);
 	explosion->SetPosition(gameObject->GetPosition());
@@ -64,8 +56,6 @@ void HealthComponent::Death(std::shared_ptr<GameObject> gameObject)
 	//Play a sound, in space, in a vacuum, where no one can here you. 
 	//But hey if we adding friction then might as well. Who knows maybe a space monster can hear it.... 
 	MySoundEngine::GetInstance()->Play(destructionSound, false);
-
-//B	objectManager->AddObject(explosion);
 
 	gameObject->SetActive(false);
 }

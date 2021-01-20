@@ -5,10 +5,8 @@
 #include "GameObject.h"
 #include "ObjectManager.h"
 
-RockCollisionComponent::RockCollisionComponent(std::shared_ptr<ObjectManager> objectManager,
-	std::shared_ptr<Circle2D> collisionShape) : objectManager(objectManager)
+RockCollisionComponent::RockCollisionComponent(std::shared_ptr<Circle2D> collisionShape) : collisionShape(collisionShape)
 {
-	RockCollisionComponent::collisionShape = collisionShape;
 	CollisionComponent::isCollidable = true;
 }
 

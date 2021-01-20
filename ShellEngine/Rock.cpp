@@ -18,11 +18,7 @@ inline std::shared_ptr<GameObject> CreateRock(std::shared_ptr<ObjectManager>& ob
 	std::shared_ptr<HealthComponent> healthComponent(new HealthComponent(objectManager, startingHealth));
 	std::shared_ptr<RockCollisionComponent> rockCollisionComponent
 	(
-		new RockCollisionComponent
-		(
-			objectManager,
-			std::shared_ptr<Circle2D> (new Circle2D())
-		)
+		new RockCollisionComponent (std::shared_ptr<Circle2D> (new Circle2D()))
 	);
 
 	std::vector<std::shared_ptr<Component>> components;

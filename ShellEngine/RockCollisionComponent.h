@@ -9,13 +9,8 @@ class RockCollisionComponent : public CollisionComponent
 {
 public:
 	//constructor for the collision component
-	//objectManager -> object manager used for managing objects
 	//collisionShape -> collision shape for the rock
-	RockCollisionComponent
-	(
-		std::shared_ptr<ObjectManager> objectManager,
-		std::shared_ptr<Circle2D> collisionShape
-	);
+	RockCollisionComponent (std::shared_ptr<Circle2D> collisionShape);
 
 	//Places a hit box shape
 	//gameObject -> rock the collision component belongs to.
@@ -33,9 +28,6 @@ public:
 	//Get the hitbox shape
 	std::shared_ptr<IShape2D> GetHitBoxShape() override;
 private:
-	//reference to the object manager in use
-	std::shared_ptr<ObjectManager> objectManager;
-
 	//The hitbox shape. 
 	std::shared_ptr<Circle2D> collisionShape;
 
