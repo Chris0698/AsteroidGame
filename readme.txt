@@ -4,4 +4,4 @@ An aspect of the assignment was "an advance component" which could have been a c
 
 This project replied on vector maths for rocks and spaceship direction and angle of travel. Debugging was also heavily required to check for null pointers and other unexpected behavior that occured throughout development. 
 
-Should you wish to run the .exe, the executable is located in the ShellEngine/Debug directories. 
+The base game is kept in the master repo, the upgraded version of the game is kept in the development repo.
